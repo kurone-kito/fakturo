@@ -12,6 +12,7 @@
 ## Requires
 
 - Node.js >= 14.19.0
+- Yarn >= 2.4.3
 
 ## License
 
