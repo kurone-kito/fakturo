@@ -1,0 +1,13 @@
+name: CI on feature branch
+on:
+  push:
+    branches:
+      - "*"
+      - "!master"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
