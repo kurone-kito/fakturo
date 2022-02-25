@@ -10,3 +10,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version-file: .node-version
+          registry-url: https://npm.pkg.github.com
+          scope: "@kurone-kito"

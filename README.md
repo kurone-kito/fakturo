@@ -9,6 +9,10 @@
 - ESLint
 - TypeScript
 
+## Requires
+
+- Node.js >= 14.19.0
+
 ## License
 
 MIT
