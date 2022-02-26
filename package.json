@@ -1,3 +1,21 @@
 {
+  "name": "monorepo-pnp-jest-example",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example project with Yarn workspaces + PnP + Jest + ESLint + TypeScript",
+  "keywords": [],
+  "homepage": "https://github.com/kurone-kito/monorepo-pnp-jest-example#readme",
+  "bugs": "https://github.com/kurone-kito/monorepo-pnp-jest-example/issues",
+  "repository": "github:kurone-kito/monorepo-pnp-jest-example",
+  "license": "MIT",
+  "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
+  "files": [],
+  "engines": {
+    "node": ">=14.19.0",
+    "yarn": ">=2.4.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "packageManager": "yarn@3.2.0"
 }
