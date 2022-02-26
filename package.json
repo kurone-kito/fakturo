@@ -10,7 +10,12 @@
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
   "files": [],
+  "scripts": {
+    "postinstall": "path-exists .git && husky install || exit 0"
+  },
   "devDependencies": {
+    "husky": "^7.0.4",
+    "path-exists-cli": "^2.0.0",
     "typescript": "^4.5.5"
   },
   "engines": {
