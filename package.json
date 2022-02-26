@@ -10,6 +10,9 @@
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
   "files": [],
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
   "engines": {
     "node": ">=14.19.0",
     "yarn": ">=2.4.3"
