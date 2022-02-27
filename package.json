@@ -10,6 +10,11 @@
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
   "files": [],
+  "workspaces": {
+    "packages": [
+      "./packages/*"
+    ]
+  },
   "scripts": {
     "postinstall": "path-exists .git && husky install || exit 0",
     "lint": "concurrently -m 1 \"yarn:lint:*:check\"",
