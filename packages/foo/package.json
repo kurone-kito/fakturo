@@ -1,0 +1,27 @@
+{
+  "name": "@kurone-kito/mpje-foo",
+  "version": "0.1.0",
+  "description": "Example project with Yarn workspaces + PnP + Jest + ESLint + TypeScript",
+  "keywords": [],
+  "homepage": "https://github.com/kurone-kito/monorepo-pnp-jest-example#readme",
+  "bugs": "https://github.com/kurone-kito/monorepo-pnp-jest-example/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurone-kito/monorepo-pnp-jest-example.git",
+    "directory": "packages/foo"
+  },
+  "license": "MIT",
+  "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
+  "files": [],
+  "devDependencies": {
+    "@kurone-kito/mpje-builder": "workspace:*"
+  },
+  "engines": {
+    "node": ">=14.19.0",
+    "yarn": ">=2.4.3"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  }
+}

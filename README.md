@@ -1,6 +1,6 @@
 # ℹ️ monorepo-pnp-jest-example
 
-ℹ️ Example project with...
+Example project with...
 
 - Node.js
 - Monorepo by Yarn workspaces
@@ -8,6 +8,15 @@
 - Jest
 - ESLint
 - TypeScript
+
+## Projects structure
+
+| path                | name                        | publish | description                                                            |
+| :------------------ | :-------------------------- | :-----: | :--------------------------------------------------------------------- |
+| `/`                 | `monorepo-pnp-jest-example` |         | Manage the Monorepo, and the Linters                                   |
+| `/packages/foo`     | `@kurone-kito/mpje-foo`     |   ✅    | An example package                                                     |
+| `/packages/bar`     | `@kurone-kito/mpje-bar`     |   ✅    | An example package that depends on `@kurone-kito/mpje-foo`             |
+| `/packages/builder` | `@kurone-kito/mpje-builder` |         | The builder of the `@kurone-kito/mpje-foo` and `@kurone-kito/mpje-bar` |
 
 ## Requires
 

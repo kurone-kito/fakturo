@@ -291,6 +291,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurone-kito/mpje-bar@workspace:packages/bar":
+  version: 0.0.0-use.local
+  resolution: "@kurone-kito/mpje-bar@workspace:packages/bar"
+  dependencies:
+    "@kurone-kito/mpje-builder": "workspace:*"
+    "@kurone-kito/mpje-foo": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@kurone-kito/mpje-builder@workspace:*, @kurone-kito/mpje-builder@workspace:packages/builder":
+  version: 0.0.0-use.local
+  resolution: "@kurone-kito/mpje-builder@workspace:packages/builder"
+  languageName: unknown
+  linkType: soft
+
+"@kurone-kito/mpje-foo@workspace:*, @kurone-kito/mpje-foo@workspace:packages/foo":
+  version: 0.0.0-use.local
+  resolution: "@kurone-kito/mpje-foo@workspace:packages/foo"
+  dependencies:
+    "@kurone-kito/mpje-builder": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
