@@ -15,5 +15,5 @@ jobs:
           cache: yarn
           node-version-file: .node-version
           registry-url: https://npm.pkg.github.com
-          scope: "@kurone-kito"
+          scope: '@kurone-kito'
       - run: yarn install
