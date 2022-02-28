@@ -297,12 +297,15 @@ __metadata:
   dependencies:
     "@kurone-kito/mpje-builder": "workspace:*"
     "@kurone-kito/mpje-foo": "workspace:*"
+    typescript: ^4.5.5
   languageName: unknown
   linkType: soft
 
 "@kurone-kito/mpje-builder@workspace:*, @kurone-kito/mpje-builder@workspace:packages/builder":
   version: 0.0.0-use.local
   resolution: "@kurone-kito/mpje-builder@workspace:packages/builder"
+  dependencies:
+    typescript: ^4.5.5
   languageName: unknown
   linkType: soft
 
@@ -311,6 +314,7 @@ __metadata:
   resolution: "@kurone-kito/mpje-foo@workspace:packages/foo"
   dependencies:
     "@kurone-kito/mpje-builder": "workspace:*"
+    typescript: ^4.5.5
   languageName: unknown
   linkType: soft
 

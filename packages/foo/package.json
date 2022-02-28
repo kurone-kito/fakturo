@@ -14,7 +14,8 @@
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
   "files": [],
   "devDependencies": {
-    "@kurone-kito/mpje-builder": "workspace:*"
+    "@kurone-kito/mpje-builder": "workspace:*",
+    "typescript": "^4.5.5"
   },
   "engines": {
     "node": ">=14.19.0",

@@ -33,7 +33,7 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: { impliedStrict: true },
     extraFileExtensions: ['.cjs', '.cts', '.mjs', '.mts', '.json'],
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json'],
     sourceType: 'module',
     // ! Below is why I am writing the ESLint configuration
     // ! in JavaScript instead of YAML.
@@ -46,6 +46,13 @@ module.exports = {
     // build time needs to work correctly to reduce bundle size, and active
     // use of the type import syntax can contribute significantly to this.
     '@typescript-eslint/consistent-type-imports': 'warn',
+    // Allow bracketing of class members. The default is to prohibit it.
+    // This should be set appropriately according to the
+    // `noPropertyAccessFromIndexSignature` setting in `tsconfig.json`.
+    // Still, for some reason, it does not work in the Monorepo,
+    // so we have no choice but to disable it temporarily.
+    // ! TODO: The setting is temporary and will remove when the problem is solved.
+    '@typescript-eslint/dot-notation': 'off',
     // Prohibit dependencies on `devDependencies`, except for specific
     // files. By default, this is a total ban. There is no need for
     // strict separation of dependent packages since they are internally
