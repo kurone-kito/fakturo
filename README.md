@@ -45,9 +45,7 @@ remove dependent external packages installed by the `yarn install` command.
 yarn run build
 ```
 
-This command instructs the sub-projects under it to build. Note that in the
-current version, all sub-projects are empty, so they are in a dry-run state
-and do not do anything.
+Create a `dist` folder for each subproject and output the results there.
 
 ```sh
 yarn run build:re
@@ -62,11 +60,11 @@ rebuild.
 yarn start
 ```
 
-The command is the same as the build command, but it monitors the source
-code, detects any changes, and automatically builds more.
+The command, like build, creates a `dist` folder for each sub-project
+underneath and outputs the artifacts there, but it also monitors the source
+code for changes and performs a build every time the user saves.
 
-Note that the current state is just a dry-run, the same as the build
-command.
+To stop it, press _`Ctrl` + `c`_.
 
 ## Linting
 
