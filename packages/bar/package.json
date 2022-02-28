@@ -13,13 +13,29 @@
   "license": "MIT",
   "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
   "type": "module",
-  "files": [],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "",
+    "build": "concurrently \"yarn:build:*\"",
+    "build:es": "mpjebuild",
+    "build:ts": "tsc",
     "clean": "rimraf \"*.tgz\" \"*.tsbuildinfo\" \"dist\"",
     "prepack": "concurrently -m 1 \"yarn:clean\" \"yarn:build\"",
-    "start": "",
-    "test": ""
+    "start": "concurrently \"yarn:watch:*\"",
+    "test": "",
+    "watch:es": "mpjebuild --watch",
+    "watch:ts": "tsc --watch"
   },
   "dependencies": {
     "@kurone-kito/mpje-foo": "workspace:*"
