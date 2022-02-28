@@ -30,6 +30,44 @@ npm i -g yarn@berry
 yarn install
 ```
 
+## Cleanup
+
+```sh
+yarn run clean
+```
+
+The command removes artifacts and various intermediate data, and it doesn't
+remove dependent external packages installed by the `yarn install` command.
+
+## Build
+
+```sh
+yarn run build
+```
+
+This command instructs the sub-projects under it to build. Note that in the
+current version, all sub-projects are empty, so they are in a dry-run state
+and do not do anything.
+
+```sh
+yarn run build:re
+```
+
+The above command performs cleanup and builds at once, equivalent to a
+rebuild.
+
+### Create a hot code push environment for development
+
+```sh
+yarn start
+```
+
+The command is the same as the build command, but it monitors the source
+code, detects any changes, and automatically builds more.
+
+Note that the current state is just a dry-run, the same as the build
+command.
+
 ## Linting
 
 ```sh

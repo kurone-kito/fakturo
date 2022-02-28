@@ -17,3 +17,4 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@kurone-kito'
       - run: yarn install
+      - run: yarn run build
