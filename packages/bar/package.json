@@ -1,0 +1,57 @@
+{
+  "name": "@kurone-kito/mpje-bar",
+  "version": "0.1.0",
+  "description": "Example project with Yarn workspaces + PnP + Jest + ESLint + TypeScript",
+  "keywords": [],
+  "homepage": "https://github.com/kurone-kito/monorepo-pnp-jest-example#readme",
+  "bugs": "https://github.com/kurone-kito/monorepo-pnp-jest-example/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurone-kito/monorepo-pnp-jest-example.git",
+    "directory": "packages/bar"
+  },
+  "license": "MIT",
+  "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "concurrently \"yarn:build:*\"",
+    "build:es": "mpjebuild",
+    "build:ts": "tsc",
+    "clean": "rimraf \"*.tgz\" \"*.tsbuildinfo\" \"dist\"",
+    "prepack": "concurrently -m 1 \"yarn:clean\" \"yarn:build\"",
+    "start": "concurrently \"yarn:watch:*\"",
+    "test": "",
+    "watch:es": "mpjebuild --watch",
+    "watch:ts": "tsc --watch"
+  },
+  "dependencies": {
+    "@kurone-kito/mpje-foo": "workspace:*"
+  },
+  "devDependencies": {
+    "@kurone-kito/mpje-builder": "workspace:*",
+    "concurrently": "^7.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14.19.0",
+    "yarn": ">=2.4.3"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  }
+}

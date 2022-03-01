@@ -1,0 +1,77 @@
+{
+  "name": "monorepo-pnp-jest-example",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Example project with Yarn workspaces + PnP + Jest + ESLint + TypeScript",
+  "keywords": [],
+  "homepage": "https://github.com/kurone-kito/monorepo-pnp-jest-example#readme",
+  "bugs": "https://github.com/kurone-kito/monorepo-pnp-jest-example/issues",
+  "repository": "github:kurone-kito/monorepo-pnp-jest-example",
+  "license": "MIT",
+  "author": "kurone-kito <krone@kit.black> (https://kit.black/)",
+  "files": [],
+  "workspaces": {
+    "packages": [
+      "./packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "yarn run sub --topological-dev -t run build",
+    "build:re": "concurrently -m 1 \"yarn:clean\" \"yarn:build\"",
+    "clean": "concurrently \"yarn:clean:*\"",
+    "clean:root": "rimraf \".eslintcache\" \"*.tgz\" \"*.tsbuildinfo\"",
+    "clean:sub": "yarn run sub run clean",
+    "postinstall": "path-exists .git && husky install || exit 0",
+    "lint": "concurrently -m 1 \"yarn:lint:*:check\"",
+    "lint:eslint:check": "eslint --cache --format codeframe \"$@\" \"./**/*\"",
+    "lint:eslint:fix": "yarn run lint:eslint:check --fix",
+    "lint:fix": "concurrently -m 1 \"yarn:lint:*:fix\"",
+    "lint:prettier:check": "prettier --check ./**/*",
+    "lint:prettier:fix": "prettier --write ./**/*",
+    "prepack": "yarn run sub --topological-dev -t pack",
+    "start": "yarn run build && yarn run sub -j 5 run start",
+    "sub": "yarn workspaces foreach --from \"@kurone-kito/mpje-*\" -ipv \"$@\"",
+    "test": "yarn run sub --topological-dev -t run test && yarn run lint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/eslint": "^8.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-formatter-codeframe": "^7.32.1",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-editorconfig": "^3.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^37.9.5",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-yaml": "^0.5.0",
+    "husky": "^7.0.4",
+    "path-exists-cli": "^2.0.0",
+    "prettier": "^2.5.1",
+    "prettier-plugin-packagejson": "^2.2.15",
+    "prettier-plugin-properties": "^0.1.0",
+    "prettier-plugin-sh": "^0.8.1",
+    "prettier-plugin-sort-json": "^0.0.2",
+    "pretty-quick": "^3.1.3",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5",
+    "typescript-eslint-language-service": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.19.0",
+    "yarn": ">=2.4.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "packageManager": "yarn@3.2.0"
+}

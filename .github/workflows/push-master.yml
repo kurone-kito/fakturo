@@ -1,0 +1,24 @@
+name: CI on master branch
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version-file: .node-version
+          registry-url: https://npm.pkg.github.com
+          scope: '@kurone-kito'
+      - run: yarn install
+      - run: yarn run build
+      - env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn run sub --topological-dev -t publish
